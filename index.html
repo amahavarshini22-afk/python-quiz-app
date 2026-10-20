@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyQuest | Python Quiz Challenge</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-icon">&lt;/&gt;</span>
+        <span>Py<span class="accent">Quest</span></span>
+      </a>
+
+      <p class="menu-label">WORKSPACE</p>
+      <button class="nav-item active" id="homeBtn">⌂ <span>Dashboard</span></button>
+      <button class="nav-item" id="challengeBtn">⚡ <span>Quiz Challenge</span></button>
+
+      <div class="side-bottom">
+        <div class="side-card">
+          <span class="sparkle">✦</span>
+          <h3>Keep learning!</h3>
+          <p>Small steps every day lead to big results.</p>
+        </div>
+        <p class="side-footer">PYQUEST v1.0 · LEARN BY DOING</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR CODING JOURNEY</p>
+          <h2>Python Learning Hub</h2>
+        </div>
+        <div class="profile">
+          <div class="avatar">P</div>
+          <div><strong>Python Learner</strong><small>Keep it up!</small></div>
+        </div>
+      </header>
+
+      <section id="dashboard">
+        <div class="hero">
+          <div class="hero-content">
+            <span class="pill"><span class="live-dot"></span> YOUR NEXT CHALLENGE AWAITS</span>
+            <h1>Code smarter.<br><span>Think in Python.</span></h1>
+            <p>Practice your skills, challenge your brain, and become more confident with Python — one question at a time.</p>
+            <button class="primary-btn" id="startBtn">Start your challenge <span>→</span></button>
+          </div>
+          <div class="hero-art">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="code-window">
+              <div class="window-top"><i></i><i></i><i></i><span>main.py</span></div>
+              <div class="code-lines">
+                <p><b>01</b> <span class="pink">def</span> <span class="cyan">learn</span>():</p>
+                <p><b>02</b> &nbsp; <span class="purple">skills</span> = <span class="green">"Python"</span></p>
+                <p><b>03</b> &nbsp; <span class="pink">return</span> <span class="green">"Success!"</span></p>
+                <p><b>04</b></p>
+                <p><b>05</b> <span class="cyan">print</span>(learn())<span class="cursor"></span></p>
+              </div>
+              <div class="code-result">✓ Success! <span>Process finished</span></div>
+            </div>
+            <div class="floating-badge">✦ Keep growing</div>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="eyebrow">YOUR PROGRESS</p><h2>Learning overview</h2></div>
+          <span class="subtle">Every question counts.</span>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-icon purple-bg">⚡</div><p>Questions answered</p><h3 id="answeredStat">0</h3><small>Across your sessions</small></article>
+          <article class="stat-card"><div class="stat-icon green-bg">✓</div><p>Correct answers</p><h3 id="correctStat">0</h3><small>Keep building accuracy</small></article>
+          <article class="stat-card"><div class="stat-icon blue-bg">◎</div><p>Accuracy</p><h3 id="accuracyStat">0%</h3><small>Your overall accuracy</small></article>
+        </div>
+
+        <div class="section-heading levels-heading">
+          <div><p class="eyebrow">PICK YOUR LEVEL</p><h2>Choose your challenge</h2></div>
+        </div>
+
+        <div class="level-grid">
+          <article class="level-card beginner">
+            <div class="level-top"><span class="level-icon">🌱</span><span class="difficulty">LEVEL 01</span></div>
+            <h3>Beginner</h3><p>Start with Python basics, variables, data types and operators.</p>
+            <div class="level-meta"><span>10 questions</span><span>Easy</span></div>
+            <button class="level-btn" data-level="Beginner">Start learning <span>→</span></button>
+          </article>
+          <article class="level-card intermediate">
+            <div class="level-top"><span class="level-icon">⚙️</span><span class="difficulty">LEVEL 02</span></div>
+            <h3>Intermediate</h3><p>Practice loops, functions, strings, lists and problem-solving.</p>
+            <div class="level-meta"><span>10 questions</span><span>Medium</span></div>
+            <button class="level-btn" data-level="Intermediate">Take the challenge <span>→</span></button>
+          </article>
+          <article class="level-card advanced">
+            <div class="level-top"><span class="level-icon">🚀</span><span class="difficulty">LEVEL 03</span></div>
+            <h3>Advanced</h3><p>Test your understanding of advanced concepts and Python logic.</p>
+            <div class="level-meta"><span>10 questions</span><span>Hard</span></div>
+            <button class="level-btn" data-level="Advanced">Level up <span>→</span></button>
+          </article>
+        </div>
+        <footer>Built with curiosity & code <span>© 2026 PyQuest</span></footer>
+      </section>
+
+      <section id="quizScreen" class="hidden">
+        <button class="back-btn" id="backBtn">← Back to dashboard</button>
+        <div class="quiz-heading">
+          <div><p class="eyebrow">PYTHON QUIZ CHALLENGE</p><h1 id="quizTitle">Beginner Challenge</h1><p class="subtle">Choose the best answer for each question.</p></div>
+          <div class="timer-box"><span>TIME LEFT</span><strong id="timer">15:00</strong></div>
+        </div>
+        <div class="quiz-progress"><div><span id="questionCounter">QUESTION 1 OF 10</span><span id="progressPercent">10%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+        <article class="question-card">
+          <div class="question-top"><span class="question-tag" id="questionTag">PYTHON BASICS</span><span class="points">+10 XP</span></div>
+          <h2 id="questionText">Loading question...</h2>
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback hidden"></div>
+          <div class="quiz-actions"><span id="answerHint">Select one answer to continue.</span><button class="primary-btn" id="nextBtn" disabled>Next question →</button></div>
+        </article>
+      </section>
+
+      <section id="resultScreen" class="hidden">
+        <div class="result-card">
+          <div class="result-icon" id="resultIcon">🏆</div>
+          <p class="eyebrow">CHALLENGE COMPLETED</p>
+          <h1 id="resultTitle">Amazing work!</h1>
+          <p id="resultMessage">You finished the challenge.</p>
+          <div class="score-circle"><strong id="finalScore">0/100</strong><span>YOUR SCORE</span></div>
+          <div class="result-stats"><div><strong id="resultCorrect">0</strong><span>Correct</span></div><div><strong id="resultWrong">0</strong><span>Incorrect</span></div><div><strong id="resultAccuracy">0%</strong><span>Accuracy</span></div></div>
+          <button class="primary-btn" id="retryBtn">Try again ↻</button>
+          <button class="secondary-btn" id="dashboardBtn">Back to dashboard</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
